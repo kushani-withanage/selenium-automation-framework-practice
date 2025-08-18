@@ -48,5 +48,20 @@ public class DropdownTest {
         }
     }
 
+    //google suggestions select
+    @Test
+    public void googleSEarchDropdown(){
+        driver.get("https://www.google.com/");
+        WebElement searchbar= driver.findElement(By.className("q"));
+        searchbar.sendKeys("iCET");
+        List<WebElement> elements = driver.findElements(By.xpath("//span[normalize-space()='icet']"));
+        for(WebElement e:elements){
+            if(e.getText().equals("iCET - Institute of Computer Engineering Technology")){
+                e.click();
+                break;
+            }
+        }
+    }
 
+    //
 }
