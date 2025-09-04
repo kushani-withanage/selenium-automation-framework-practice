@@ -1,3 +1,4 @@
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -46,6 +47,18 @@ public class ActionMouseOperation {
         actions.dragAndDropBy(sliderPoint1,50,0).perform();
         System.out.println("slider point 1-"+sliderPoint1.getLocation());
 
+    }
+
+    @Test
+    public void rightClickOperation(){
+        driver.get("https://swisnl.github.io/jQuery-contextMenu/demo.html");
+        Actions actions = new Actions(driver);
+        WebElement element = driver.findElement(By.xpath("//span[@class='context-menu-one btn btn-neutral']"));
+        actions.contextClick(element).perform();
+        WebElement edit = driver.findElement(By.xpath("//span[text()='Edit']"));
+        edit.click();
+        Alert alert = driver.switchTo().alert();
+        alert.accept();
 
     }
 
