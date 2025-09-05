@@ -35,5 +35,16 @@ public class ActionKeyboardOperation {
                 keyDown(Keys.CONTROL).sendKeys("X").keyUp(Keys.CONTROL).perform();
     }
 
+    @Test
+    public void keybordAction2(){
+
+        driver.get("https://www.leafground.com/list.xhtml;jsessionid=node0l49tatdft99u19m3cjlidiudn4710866.node0");
+        List<WebElement> elements = driver.findElements(By.xpath("//ul[@aria-label='From']/li"));
+        System.out.println("Selected list count-"+elements.size());
+        Actions actions = new Actions(driver);
+        actions.keyDown(Keys.CONTROL).
+                click(elements.get(0)).click(elements.get(1)).click(elements.get(2)).perform();
+
+    }
 
 }
