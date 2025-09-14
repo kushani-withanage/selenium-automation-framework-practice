@@ -17,13 +17,12 @@ public class FileUploadDownload {
     public void openPage() throws InterruptedException {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        Thread.sleep(3000);
-
     }
 
     @Test
     public void fileDownload() throws InterruptedException {
         driver.get("https://www.leafground.com/file.xhtml");
+        Thread.sleep(3000);
         WebElement element = driver.findElement(By.id("j_idt93:j_idt95"));
         element.click();
         Thread.sleep(3000);
