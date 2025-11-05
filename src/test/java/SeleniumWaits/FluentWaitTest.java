@@ -5,10 +5,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -29,7 +27,7 @@ public class FluentWaitDemo {
     @Test
     public void fluentWaitTest(){
         Wait<WebDriver> wait = new FluentWait<>(driver)
-                .withTimeout(Duration.ofSeconds(30))       // 1. Max total time to wait
+                .withTimeout(Duration.ofSeconds(30))     // 1. Max total time to wait
                 .pollingEvery(Duration.ofSeconds(5))     // 2. How often to check (every 3 sec)
                 .ignoring(NoSuchElementException.class); // 3. Ignore this exception while polling
 
