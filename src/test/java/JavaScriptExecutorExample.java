@@ -26,7 +26,7 @@ public class JavaScriptExecutorExample {
         //1-get a alert box
 //        Thread.sleep(2000);
 //        jsExecuter.executeScript("alert('Welcome to Site');");
-//        Thread.sleep(2000);
+
 
         //2-set a input value in textbox
         //2.1- using value property
@@ -53,11 +53,12 @@ public class JavaScriptExecutorExample {
 
     }
 
-    public void scrollPage(){
+    public void scrollPage() throws InterruptedException {
         //5.1-scroll to some position
         jsExecuter.executeScript("window.scrollTo(0,1000);");
         System.out.println("current position-"+jsExecuter.executeScript("return window.pageOffset;"));
         jsExecuter.executeScript("window.scrollTo(0,-1000);");
+        Thread.sleep(2000);
 
         //5.2-scroll to bottom of the page by pixel number
         jsExecuter.executeScript("window.scrollTo(0,document.body.scrollHeight);");
