@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.function.Function;
 
-public class FluentWaitDemo {
+public class FluentWaitTest {
     WebDriver driver;
 
     @BeforeMethod
